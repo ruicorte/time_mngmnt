@@ -1,3 +1,3 @@
 module.exports = {
-    url: "URL_HERE"
+    url: "mongodb://ruicorte:items1234@ds117200.mlab.com:17200/items"
 }

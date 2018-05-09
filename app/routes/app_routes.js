@@ -31,7 +31,7 @@ module.exports = function (app, db) {
         const id = req.params.id;
         const details = { '_id': new ObjectID(id) };
         db.collection('items').remove(details, (err, item) => {
-            id(err) {
+            if(err) {
                 res.send({ 'error': 'an error has ocurred' });
             } else {
                 res.send(`item ${id} deleted`);
@@ -47,7 +47,7 @@ module.exports = function (app, db) {
             title: req.body.title
         };
         db.collection('items').update(details, item, (err, item) => {
-            if(err){
+            if(err) {
                 res.send({ 'error': 'an error has ocurred' });
             } else {
                 res.send(item);
